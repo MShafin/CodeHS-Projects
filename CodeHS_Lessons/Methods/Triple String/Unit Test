@@ -1,0 +1,5 @@
+public String tripleString(String word)
+{
+    String tripler = word + "!" + word + "!" + word;
+    return tripler;
+}

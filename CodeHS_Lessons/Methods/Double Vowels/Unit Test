@@ -1,0 +1,14 @@
+public String doubleVowel(String str)
+{
+    StringBuilder builder = new StringBuilder();
+    for(int i = 0; i <= str.length() - 1; i++)
+    {
+        char vowel = str.charAt(i);
+        if(vowel == 'a' || vowel == 'e' || vowel == 'i' || vowel == 'o' || vowel == 'u' || vowel == 'A' || vowel == 'E')
+        {
+           builder.append(vowel); // add it to the string
+        }
+        builder.append(vowel); // add any character always, vowels have been added already, resulting in double vowels
+    }
+    return builder.toString();
+}

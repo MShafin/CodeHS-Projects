@@ -1,0 +1,7 @@
+public static String altCase(String text){
+    StringBuilder Builder = new StringBuilder(text.toLowerCase());
+    for(int i = 0; i < text.length(); i+= 2){
+        Builder.setCharAt(i, Character.toUpperCase(text.charAt(i)));
+    }
+    return Builder.toString();
+}

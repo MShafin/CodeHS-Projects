@@ -1,0 +1,14 @@
+/**
+ * @param num takes numbers
+ * @param min takes the min limit
+ * @param max takes the max limit
+ * finds if the number is in between the min and max
+ */
+public boolean inRange(int num, int min, int max)
+{
+    if(num >= min && num <= max){
+        return true;
+    }else{
+        return false;
+    }
+}

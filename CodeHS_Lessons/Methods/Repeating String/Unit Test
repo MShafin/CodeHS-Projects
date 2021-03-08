@@ -1,0 +1,9 @@
+public String repeatString(String text, int numReps)
+{
+    String repeatString = "";
+      while (numReps > 0) {
+        repeatString += text;
+        numReps--;
+      }
+      return repeatString;
+}
