@@ -1,0 +1,12 @@
+public double median(int[] arr)
+{
+    //sort array
+    Arrays.sort(arr); 
+  
+    //determine even or odd length
+    if(arr.length % 2 != 0){
+        return (double)arr[arr.length / 2]; 
+    }else{
+        return (double)(arr[(arr.length - 1) / 2] + arr[arr.length / 2]) / 2; 
+    }
+}

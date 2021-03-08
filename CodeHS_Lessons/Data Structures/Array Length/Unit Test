@@ -1,0 +1,5 @@
+public int arrayLength(int[] array)
+{
+    System.out.println(array.length);
+    return array.length;
+}

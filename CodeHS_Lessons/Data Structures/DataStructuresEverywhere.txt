@@ -1,0 +1,18 @@
+In this exercise, you should come up with some software application you use 
+(a website, game, or other application) and write a few paragraphs describing 
+what data structures you think it uses behind the scenes to make it work.
+
+Dictionary - Hash Map can be used to ease the process of searching for words that
+are need defining. As the list of words remains the same using an hash map helps
+store, organize and manage the large lists.
+
+Grid based games (Bingo) - A 2d array can be used to store the data values
+determining where the pieces of the board are. In the example of Bingo the data
+values can place a 1 or 0 on the place where there is or isnt a piece. This can
+effectively be used to store the games data values, efficiently managning and
+organizing them.
+
+Contacts app - Hash map can be used to ease the process of searching for names
+of people which need to be contacted. As the list of words remains the same until
+another name is specifically added, using a hash map helps store, organize and
+manage the large lists.
