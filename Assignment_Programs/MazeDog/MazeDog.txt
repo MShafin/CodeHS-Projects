@@ -1,0 +1,53 @@
+/*
+ * This program has Karel navigate through a random
+ * maze (all three!) and reach the ball which is hidden
+ * inside. Once Karel reaches the ball he should pick
+ * it up and face east. 
+ * The program uses at least 2 functions and has
+ * Karel face east once complete.
+ *
+ *This program only uses 22/25 Lines of Code. (O_o')
+ */
+
+/*
+*Karel will find his way through the maze using the functions
+*defined below. 
+*In side the start loop, while their is no ball present
+*Karel runs the nextStep function.
+*When he reaches the ball both the scripts
+*takeBall and faceEast run.
+*/
+function start(){
+    while(noBallsPresent()){
+        nextStep();
+    }
+    while(ballsPresent()){
+        takeBall();
+        faceEast();
+    }
+}
+
+/*
+*Makes Karel face east
+*Precondition: Karel should be facing any direction
+*Postcondition: Karel should be facing east
+*/
+function faceEast(){
+    while(notFacingEast()){
+        turnLeft();
+    }
+}
+
+/*
+*Makes Karel decide how to execute its next step
+*Precondition: Karel should be in the maze
+*Postcondition: Karel will progress through the maze
+*/
+function nextStep(){
+    if(frontIsBlocked()) {
+        turnLeft();
+    } else {
+        move();
+        turnRight();
+    }
+}

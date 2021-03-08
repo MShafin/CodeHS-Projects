@@ -1,0 +1,84 @@
+//Simple Rock Paper Scissors
+//Shafin Mohammed
+//June 10 2019
+//
+//A simple rps to demonstrate the Randomizer
+//ADD Score tracker
+function start(){
+    //ask user what they want to throw
+    var userInput = prompt("Do you choose rock, paper or scissors?");
+    //uses math to randomize what the computer will throw
+    var computerChoice = Randomizer.nextInt(0, 100);
+
+    //Random computer number determines computer choice.
+    if(computerChoice < 34){
+        computerChoice = "rock";
+    }else if(computerChoice >= 67){
+        computerChoice = "paper";
+    }else{
+        computerChoice = "scissors";
+    }
+    //Prints user choice and computer choice
+    println("User Choice: " + userInput);
+    println("Computer Choice: " + computerChoice);
+    //runs the compare function with these choices
+    compare(userInput, computerChoice);
+    //runs the play again function to determine if the user wants to play again
+    playAgain();
+}
+
+//compares the users choice and the computers choice, to get a result.
+function compare(choice1, choice2) {
+    if(choice1 == choice2){
+        println("It is a tie!");
+    }
+    
+    //if use chooses paper, compares it with possible computer choices
+    if(choice1 == "paper"){
+        if(choice2 == "rock"){
+            println("paper wins");
+        }else{
+            if (choice2 == "scissors"){
+                println("scissors wins");
+            }
+        }
+    }
+    
+    if(choice1 == "scissors"){
+        if(choice2 == "rock"){
+            println("rock wins");
+        }else{
+            if(choice2 == "paper"){
+                println("scissors wins");
+            }
+        }
+    }
+            
+    if(choice1 == "rock"){
+        if(choice2 == "paper"){
+            println("paper wins");
+        }else{
+            if(choice2 == "scissors"){
+                println("rock wins");
+            }
+        }
+    }
+            
+}
+
+//Asks user if they want to play again
+function playAgain(){
+    //while loop keeps running until the user types in Yes or No
+    //break exits the while loop.
+    while(askPlayAgain != "Yes" || "No"){
+        var askPlayAgain = readLine("Do you want to play again? [Yes/No] ");
+        if(askPlayAgain == "No"){
+            break;
+        }else if(askPlayAgain == "Yes"){
+            start();
+            break;
+        }else{
+            println("Please type in your response again?(Case Sensitive)");
+        }
+    }
+}

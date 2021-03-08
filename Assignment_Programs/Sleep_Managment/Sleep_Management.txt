@@ -1,0 +1,59 @@
+//Sleep Management
+//Shafin Mohammed
+//April 21
+//
+/*A program which asks the user how much sleep they got to determine if they  
+*got enough over the last seven days.
+*/
+function start(){
+    println("Find out if you are sleeping the right amount.");
+    calculateSleepResults();
+}
+
+//Formula to help getActualSleepHours
+function getTotalSleepHours(day){
+    var hours = readInt("How long did you sleep on " + day + "? ");
+    return hours;
+}
+
+//Calculates how much sleep you got in a week. Returns the value.
+function getActualSleepHours() {
+    var Monday = getTotalSleepHours("Monday");
+    var Tuesday = getTotalSleepHours("Tuesday");
+    var Wednesday = getTotalSleepHours("Wednesday");
+    var Thursday = getTotalSleepHours("Thursday");
+    var Friday = getTotalSleepHours("Friday");
+    var Saturday = getTotalSleepHours("Saturday");
+    var Sunday = getTotalSleepHours("Sunday");
+    var Total_Sleep = Monday + Tuesday + Wednesday + Thursday + Friday + Saturday + Sunday;
+    return Total_Sleep;
+}
+
+//Calculates how much sleep you would like per week. Returns the value.
+function getIdealWeeklySleep(){
+    var Sleep = readInt("How many hours on average would you like to sleep each night? ");
+    var Weeks_Sleep = Sleep * 7;
+    return Weeks_Sleep;
+}
+
+//Calculates if the sleep you got was over, under or exctly how much sleep you wanted.
+function calculateSleepResults(){
+    //These variables run the functions above.
+    var actualSleepHours = getActualSleepHours();
+    var idealSleepHours = getIdealWeeklySleep();
+    var absOverUnderHours = Math.abs(actualSleepHours - idealSleepHours);
+
+    //prints the values of sleep you entered
+    println("Sleep Goal: " + idealSleepHours + " hours.");
+    println("Actual Sleep: " + actualSleepHours + " hours.");
+
+    //If the sleep you got is above, below or exactly the sleep you wanted it will
+    //print an appropriate response.
+    if (actualSleepHours == idealSleepHours){
+        println("You got the ideal sleep. Your sleep patterns are perfect!");
+    }else if (actualSleepHours > idealSleepHours){
+        println("You overslept for " + absOverUnderHours + " hours. You're getting more sleep than your target!");
+    }else{
+        println("You are short " + absOverUnderHours + " hours of sleep. You aren't sleeping enough! Go to bed earlier!");
+    }
+}

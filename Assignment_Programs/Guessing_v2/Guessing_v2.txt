@@ -1,0 +1,74 @@
+//Guessing v.2
+//Shafin Mohammed
+//April 17
+//
+/*A number guessing game in which the user has 6 attempts to
+*guess a random number between 1 and 100. When the game ends
+*the user is given the option to play again or end the game.
+*/
+function start(){
+    //Generates a random number each round.
+    var answer = Randomizer.nextInt(1, 100);
+    var guess;
+    var lastGuess;
+    var attempts = 1;
+    //Instructions printed at the start of each game.
+    println("You have 6 attempts to guess a random number between 1 and 100");
+    //While loop runs aslong as guess is not correct
+    while(guess != answer){
+        guess = readInt("You guessed: ");
+        
+        //if guess is correct, while loop breaks and playAgain script runs.
+        if(answer == guess){
+            println("Correct guess, it took you " + attempts + " tries. ");
+            playAgain();
+        
+        //if guess is too high or still too high
+        }else if(answer < guess){
+            if(lastGuess && answer < lastGuess){
+                println("Your guess is STILL too high. ");
+            }else{
+                println("Your guess is too high. ");
+            }
+            lastGuess = guess;
+        
+        //if guess is too low or still too low
+        }else if(answer > guess){
+            if(lastGuess && answer > lastGuess){
+                println("Your guess is STILL too low. ");                
+            }else{
+                println("Your guess is to low. ");
+            }
+            lastGuess = guess;
+        }
+        
+        //if 6 attempts are made exit while loop
+        if(attempts == 6){
+            break;
+        }
+    	//adds 1 to attempts after each guess
+    	attempts++;    
+    }
+    
+    //Endgame at 6 wrong attempts and run playAgain script.
+    if(guess != answer && attempts == 6){
+        println("The answer was " + answer + ". You did not guess the number. ");
+        playAgain();
+    }
+}
+
+function playAgain(){
+    //While loop keeps running until the user types in Yes or No.
+    //Break exits the while loop.
+    while(askPlayAgain != "Yes" || "No"){
+        var askPlayAgain = readLine("Do you want to play again? [Yes/No] ");
+        if(askPlayAgain == "No"){
+            break;
+        }else if(askPlayAgain == "Yes"){
+            start();
+            break;
+        }else{
+            println("Please type in your response again? ");
+        }
+    }
+}

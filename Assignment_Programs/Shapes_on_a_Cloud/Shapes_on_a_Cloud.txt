@@ -1,0 +1,164 @@
+//Shapes on a Cloud - Abstract JavascriptArt
+//Shafin Mohammed
+//May 31
+//
+//An abstract piece of art made with basic geometric shapes
+/*Inspired by Arthur Wishup*/
+
+var name = "Shafin Mohammed";
+var title = "Shapes on a Cloud";
+var year = 2019;
+
+function start(){
+//Defined Colors
+    var blue = new Color(70, 125, 200);
+    var teal = new Color(100, 170, 190);
+    var purple = new Color(60, 50, 105);
+    var golden = new Color(215, 190, 30);
+    var lime = new Color(210, 225, 10);
+    var red = new Color(180, 40, 40);
+    var black = new Color(20, 20, 25);
+    
+//Shapes Used On Canvas
+//Circles
+    var blueCircle = new Circle(50);
+    blueCircle.setPosition(130, 210);
+    blueCircle.setColor(blue);
+    add(blueCircle);
+    
+    var limeCircle = new Circle(35);
+    limeCircle.setPosition(350, 400);
+    limeCircle.setColor(lime);
+    add(limeCircle);
+    
+    var tealCircle = new Circle(15);
+    tealCircle.setPosition(260, 120);
+    tealCircle.setColor(teal);
+    add(tealCircle);
+    
+//Rectangles and Squares
+    var brect1 = new Rectangle(315, 25);
+    brect1.setPosition(0, 390);
+    brect1.setColor(black);
+    add(brect1);
+    
+    var brect2 = new Rectangle(10,370);
+    brect2.setPosition(255, 135);
+    brect2.setColor(black);
+    add(brect2);
+    
+    var brect3 = new Rectangle(15,300);
+    brect3.setPosition(220, 200);
+    brect3.setColor(black);
+    add(brect3);
+    
+    var brect4 = new Rectangle(30,150);
+    brect4.setPosition(40, 210);
+    brect4.setColor(black);
+    add(brect4);
+    
+    var brect5 = new Rectangle(10,60);
+    brect5.setPosition(160, 220);
+    brect5.setColor(black);
+    add(brect5);
+    
+    
+    var rrect1 = new Rectangle(300,80);
+    rrect1.setPosition(70, 280);
+    rrect1.setColor(red);
+    add(rrect1);
+    
+    var rrect2 = new Rectangle(10,100);
+    rrect2.setPosition(25, 50);
+    rrect2.setColor(red);
+    rrect2.setRotation(120);
+    add(rrect2);
+    
+    var rrect3 = new Rectangle(10,120);
+    rrect3.setPosition(360, 40);
+    rrect3.setColor(red);
+    rrect3.setRotation(45);
+    add(rrect3);
+    
+    var rrect4 = new Rectangle(10,60);
+    rrect4.setPosition(380, 90);
+    rrect4.setColor(red);
+    rrect4.setRotation(45);
+    add(rrect4);
+    
+    
+    var grect1 = new Rectangle(50,120);
+    grect1.setPosition(220, -10);
+    grect1.setColor(golden);
+    grect1.setRotation(10);
+    add(grect1);
+   
+    var grect2 = new Rectangle(25,50);
+    grect2.setPosition(185, 35);
+    grect2.setColor(golden);
+    grect2.setRotation(10);
+    add(grect2);
+    
+    var grect3 = new Rectangle(25,25);
+    grect3.setPosition(150, 10);
+    grect3.setColor(golden);
+    grect3.setRotation(10);
+    add(grect3);
+    
+    var grect4 = new Rectangle(250,60);
+    grect4.setPosition(170, 240);
+    grect4.setColor(golden);
+    add(grect4);
+    
+    
+    var trect1 = new Rectangle(50,125);
+    trect1.setPosition(70, 190);
+    trect1.setColor(teal);
+    add(trect1);
+
+//Arcs
+    var purpArc = new Arc(50, 0, 70, 0);
+    purpArc.setPosition(60, 60);
+    purpArc.setRotation(280);
+    purpArc.setColor(purple);
+    add(purpArc);
+    
+    var purpArc2 = new Arc(50, 0, 70, 0);
+    purpArc2.setPosition(90, 60);
+    purpArc2.setRotation(100);
+    purpArc2.setColor(purple);
+    add(purpArc2);
+    
+//Lines
+    var bline = new Line(0,100,150,190);
+    bline.setColor(black);
+    bline.setLineWidth(4);
+    add(bline);
+    
+    var pline = new Line(120,190,120,335);
+    pline.setColor(purple);
+    pline.setLineWidth(5);
+    add(pline);
+    
+//Ovals
+    var limeOval = new Oval(60, 40);
+    limeOval.setPosition(75, 60);
+    limeOval.setColor(lime);
+    add(limeOval);
+    
+//Text
+    var nameTxt = new Text(name, "11.5pt Roboto");
+    nameTxt.setPosition(270, 447);
+    nameTxt.setColor(black);
+    add(nameTxt);
+    
+    var titleTxt = new Text(title, "11.5pt Roboto");
+    titleTxt.setPosition(271, 461);
+    titleTxt.setColor(black);
+    add(titleTxt);
+    
+    var yearTxt = new Text(year, "11.5pt Roboto");
+    yearTxt.setPosition(362, 476);
+    yearTxt.setColor(black);
+    add(yearTxt);
+}
