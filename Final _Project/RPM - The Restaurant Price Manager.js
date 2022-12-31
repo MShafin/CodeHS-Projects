@@ -164,4 +164,4 @@ function printReceipt(arr){
     }
 }
 
-//© 2019 Shafin Mohammad
+//Â© 2019 Shafin Mohammad
